@@ -1,0 +1,129 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #090933;
+    color: #6f58f5;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Lupa */
+.lupa {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.lupa img {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.lupa img:hover {
+    transform: scale(1.1);
+}
+
+.pesquisa {
+    display: none;
+    border: 1px solid #fff;
+    background-color: #3d2752;
+    color: #fff;
+    border-radius: 4px;
+    padding: 0.5rem;
+    outline: none;
+    font-size: 1rem;
+    transition: width 0.3s;
+}
+
+.lupa:hover .pesquisa {
+    display: block;
+    width: 200px;
+}
+
+/* Lista com efeito 3D */
+.list {
+    display: flex;
+    gap: 0.25rem;
+    transform-style: preserve-3d;
+    list-style-type: none;
+    margin: 2rem auto;
+    justify-content: center;
+}
+
+.list:hover :not(:hover) {
+    margin: 0 -20px;
+    transform: perspective(500px) rotateY(45deg) scale(0.95);
+}
+
+.item {
+    position: relative;
+    width: 200px;
+    aspect-ratio: 3/4;
+    border-radius: 0.5rem;
+    background-size: cover;
+    background-position: center;
+    transition: margin 0.5s, transform 0.5s;
+}
+
+/* Sidebar e Galeria */
+main {
+    display: flex;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.sidebar {
+    width: 25%;
+    background-color: #100835;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar h1 {
+    font-size: 2rem;
+    color: #4b2968;
+}
+
+.sidebar button {
+    background-color: #422950;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    width: 75%;
+}
+
+.gallery-item {
+    background-size: cover;
+    background-position: center;
+    aspect-ratio: 1/1.2;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
